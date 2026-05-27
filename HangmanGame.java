@@ -257,7 +257,6 @@ class GamePanel extends JPanel {
         statusLabel.setForeground(rem <= 2 ? REMAIN_RED : REMAIN_GREEN);
         statusLabel.setText("Remaining guesses: " + rem);
 
-        // Clear any death animation so a fresh game always shows a clean stickman
         canvas.resetAnimation();
         canvas.repaint();
     }
@@ -343,10 +342,10 @@ class HangmanCanvas extends JPanel {
         partVY[0]    = 1 + rng.nextDouble() * 2;
         partAngle[0] = 0;                 partAV[0] = (rng.nextDouble() - 0.5) * 0.25;
         groundY      = new double[PARTS];
-        groundY[0]   = base - r;          // head centre sits radius above ground
+        groundY[0]   = base - r;        
 
         partX[1]     = cx + (rng.nextDouble() - 0.5) * 10;
-        partY[1]     = cy + r + 30;       // mid-torso
+        partY[1]     = cy + r + 30;      
         partVY[1]    = 0.8 + rng.nextDouble() * 1.5;
         partAngle[1] = 0;                 partAV[1] = (rng.nextDouble() - 0.5) * 0.20;
         groundY[1]   = base - 2;
